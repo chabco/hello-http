@@ -1,12 +1,20 @@
 // Without "./", Node looks in its global module folder
+const nerds = require('nerds');
 const http = require('http');
 function handleReqAndRes(req, res) {
     console.log(req.url);
-    const timestamp = new Date();
-    console.log("I totally recieved a request!")
-    res.end(`<h1>Hello World ${timestamp}</h1>
-    <p>lol wtf</p>`);
+    // const timestamp = new Date();
+    // console.log("I totally recieved a request!")
+    
+    
+    let singleHP = nerds.resolve('Harry Potter').asArray()[0].first;
+    console.log(singleHP);
+
+
     //.end() sends the response.. "Tapes up the box and ships it.""
+    // res.end(`<h1>Hello World ${timestamp}</h1>
+    // <p>lol wtf</p>`);
+    res.end(singleHP);
 };
 
 // What's a server??
